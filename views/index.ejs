@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/main.css">  
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
+    <title>Moment 1 - backend baserad webbutveckling</title>
+</head>
+<body>
+    <header>
+        <div class="navContainer">
+            <h1>Mitt CV - kurser</h1>
+            <nav>
+                <ul>
+                    <li><a href="/" class="active">Kurser</a></li>
+                    <li><a href="/addcourse">Lägg till kurs</a></li>
+                    <li><a href="/about">Om sidan</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+   
+    <div class="courseContainer">
+        <main>
+            <h2>Mina avklarade kurser</h2>
+                <a href="/addcourse" id="add">Lägg till ny kurs</a> <!-- länk till sidan för att lägga till kurser -->
+
+                <!-- skapar en ul lista med li element som innehåller input från formuläret -->
+                <ul>
+                    <% courses.forEach((course) => { %>
+                        <li>
+                           <span class="listrubrik"> Kursnamn:</span> <span class="listp"><%= course.coursename %></span><br>
+                            <span class="listrubrik">Kurskod:</span> <span class="listp"><%= course.coursecode %></span><br>
+                            <span class="listrubrik">URL:</span> <span class="listp"><a href="<%= course.syllabus %>" id="url"><%= course.syllabus %></a></span><br>
+                            <span class="listrubrik">Progression:</span> <span class="listp"><%= course.progression %></span><br>
+                        <a href="/deletecourse/<%= course.id %>" class="delete-link">Radera kurs</a>
+                        </li>
+                        <% }) %>
+                </ul>
+        </main>
+    </div>
+    <footer>
+        <p>Copyrights: Anne-Lii Hansen</p>
+    </footer>
+</body>
+</html>
