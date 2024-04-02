@@ -34,7 +34,7 @@
                         <li>
                            <span class="listrubrik"> Kursnamn:</span> <span class="listp"><%= course.coursename %></span><br>
                             <span class="listrubrik">Kurskod:</span> <span class="listp"><%= course.coursecode %></span><br>
-                            <span class="listrubrik">URL:</span> <span class="listp"><a href="<%= course.syllabus %>" id="url"><%= course.syllabus %></a></span><br>
+                            <span class="listrubrik">URL:</span> <span class="listp"><a href="<%= course.syllabus %>" class="url"><%= course.syllabus %></a></span><br>
                             <span class="listrubrik">Progression:</span> <span class="listp"><%= course.progression %></span><br>
                         <a href="/deletecourse/<%= course.id %>" class="delete-link">Radera kurs</a>
                         </li>
